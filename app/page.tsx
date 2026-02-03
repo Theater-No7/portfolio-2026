@@ -7,13 +7,16 @@ import { HeroSection } from "@/components/portfolio/hero-section";
 import { WorksSection } from "@/components/portfolio/works-section";
 import { AboutSection } from "@/components/portfolio/about-section";
 import { ContactSection } from "@/components/portfolio/contact-section";
+import { MobileNav } from "@/components/portfolio/mobile-nav";
 
 export default function Portfolio() {
-  const [activeSection, setActiveSection] = useState("profile");
+  // 初期セクションを "hero" に設定（SidebarとIDを合わせるため）
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["profile", "works", "about", "contact"];
+      // 各セクションのID定義（HeroSectionのIDは"hero"である前提）
+      const sections = ["hero", "works", "about", "contact"];
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       for (const section of sections) {
@@ -43,9 +46,9 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-foreground">
+    <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-[#148E96] selection:text-white">
       {/* Background Effects */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         {/* Gradient orbs */}
         <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#148E96]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-[#5eead4]/10 rounded-full blur-[100px]" />
@@ -69,11 +72,16 @@ export default function Portfolio() {
         />
       </div>
 
-      {/* Sidebar Navigation */}
+      {/* Navigation Components */}
+      {/* PC用: md以上で表示 (Sidebar内部で hidden md:flex 指定済み) */}
       <Sidebar activeSection={activeSection} onNavigate={scrollToSection} />
 
+      {/* スマホ用: md未満で表示 (MobileNav内部で md:hidden 指定済み) */}
+      <MobileNav />
+
       {/* Main Content */}
-      <main className="lg:ml-64">
+      {/* md:ml-64 に変更：タブレット以上でサイドバー分の余白を空ける */}
+      <main className="relative z-10 md:ml-64 flex flex-col min-h-screen">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -99,7 +107,10 @@ function ScrollProgress() {
     const updateProgress = () => {
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrolled = window.scrollY;
-      setProgress((scrolled / scrollHeight) * 100);
+      // 0除算防止
+      if (scrollHeight > 0) {
+        setProgress((scrolled / scrollHeight) * 100);
+      }
     };
 
     window.addEventListener("scroll", updateProgress);
@@ -108,7 +119,8 @@ function ScrollProgress() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-0.5 bg-[rgba(255,255,255,0.1)] z-50 lg:left-64"
+      // サイドバーに合わせてプログレスバーの開始位置も調整 (md:left-64)
+      className="fixed top-0 left-0 right-0 h-1 bg-white/5 z-50 md:left-64"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1 }}
