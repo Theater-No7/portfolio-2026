@@ -9,27 +9,24 @@ const _geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono
 const _notoSansJP = Noto_Sans_JP({ subsets: ["latin"], variable: "--font-noto-jp", weight: ["400", "500", "700"] });
 
 export const metadata: Metadata = {
-  title: 'Leo Sato | Design Engineer & HCI Researcher',
-  description: 'Design Engineer bridging HCI research and software engineering. Creating beautiful, functional digital experiences.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
+  title: "Leo Sato | Design Engineer",
+  description: "HCI研究とエンジニアリングの架け橋となるポートフォリオサイト。",
+  openGraph: {
+    title: "Leo Sato | Design Engineer",
+    description: "HCI研究とエンジニアリングの架け橋となるポートフォリオサイト。",
+    url: "https://leosato.dev", // ←取得したドメインを入れる
+    siteName: "Leo Sato Portfolio",
+    images: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: "/og-image.png", // ←後で作る画像（1200x630px）
+        width: 1200,
+        height: 630,
       },
     ],
-    apple: '/apple-icon.png',
+    locale: "ja_JP",
+    type: "website",
   },
-}
+};
 
 export default function RootLayout({
   children,
