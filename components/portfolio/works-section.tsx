@@ -98,7 +98,7 @@ export function WorksSection() {
                                 <div className="relative flex flex-col h-full rounded-2xl bg-[#0d0d0d]/80 backdrop-blur-xl border border-white/10 overflow-hidden transition-all duration-500 hover:border-[#148E96]/50 hover:shadow-[0_0_30px_-5px_rgba(20,142,150,0.3)]">
 
                                     {/* 🖼️ 画像表示エリア */}
-                                    <div className="relative h-64 w-full overflow-hidden bg-gray-900">
+                                    <div className="relative h-80 w-full overflow-hidden bg-gray-900">
                                         {/* Next.js Image Component */}
                                         <Image
                                             src={project.image}
