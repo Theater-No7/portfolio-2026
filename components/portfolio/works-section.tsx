@@ -2,6 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import { ExternalLink, Sparkles, BookOpen } from "lucide-react";
+import Image from "next/image"; // ← 追加
 
 const projects = [
     {
@@ -9,22 +10,20 @@ const projects = [
         title: "Crolla",
         description:
             "Webコンテンツを自動同期・管理するAIツール。複数のプラットフォーム間での情報更新をスマートに自動化します。",
-        image: "/projects/crolla.jpg",
-        tags: ["Next.js", "Firebase", "OpenAI", "HCI"],
-        link: "#",
+        image: "/projects/crolla.png", // ← public/projects/crolla.png が読み込まれます
+        tags: ["TypeScript", "Next.js", "Firebase", "OpenAI", "HCI"],
+        link: "https://crolla.web.app/",
         icon: Sparkles,
-        gradient: "from-[#148E96] to-[#0d4f52]",
     },
     {
         id: 2,
         title: "Kalua",
         description:
             "飲食店のマニュアル管理・教育コストを削減するSaaS。現場のオペレーションを考慮したUI設計で、トレーニング効率を向上させます。",
-        image: "/projects/kalua.jpg",
-        tags: ["React", "Tailwind", "Supabase", "UX Research"],
-        link: "#",
+        image: "/projects/kalua.png", // ← public/projects/kalua.png が読み込まれます
+        tags: ["TypeScript", "React", "Tailwind", "Firebase", "UX Research"],
+        link: "https://kalua-app.vercel.app/",
         icon: BookOpen,
-        gradient: "from-[#5eead4] to-[#148E96]",
     },
 ];
 
@@ -69,13 +68,13 @@ export function WorksSection() {
                         </span>
                         <div className="h-px flex-1 max-w-12 bg-gradient-to-l from-transparent to-[#148E96]" />
                     </div>
-                    <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white">
                         Featured{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#148E96] to-[#5eead4]">
                             Works
                         </span>
                     </h2>
-                    <p className="mt-4 text-muted-foreground max-w-2xl">
+                    <p className="mt-4 text-gray-400 max-w-2xl">
                         デザイン思考と技術実装を融合させた、代表的なプロジェクト。
                     </p>
                 </motion.div>
@@ -94,72 +93,62 @@ export function WorksSection() {
                             <motion.article
                                 key={project.id}
                                 variants={itemVariants}
-                                className="group relative"
+                                className="group relative flex flex-col h-full"
                             >
-                                <div className="relative rounded-2xl bg-[rgba(20,142,150,0.05)] backdrop-blur-xl border border-[rgba(255,255,255,0.1)] overflow-hidden transition-all duration-500 hover:border-[rgba(20,142,150,0.4)] hover:shadow-2xl hover:shadow-[rgba(20,142,150,0.15)]">
-                                    {/* Project Image/Placeholder */}
-                                    <div
-                                        className={`relative h-48 bg-gradient-to-br ${project.gradient} overflow-hidden`}
-                                    >
-                                        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yIDItNCAyLTRzMiAyIDIgNC0yIDQtMiA0LTItMi0yLTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30" />
-                                        <div className="absolute inset-0 flex items-center justify-center">
-                                            <motion.div
-                                                whileHover={{ scale: 1.1, rotate: 5 }}
-                                                className="w-20 h-20 rounded-2xl bg-[rgba(255,255,255,0.15)] backdrop-blur-sm border border-[rgba(255,255,255,0.2)] flex items-center justify-center"
-                                            >
-                                                <Icon className="w-10 h-10 text-foreground" />
-                                            </motion.div>
+                                <div className="relative flex flex-col h-full rounded-2xl bg-[#0d0d0d]/80 backdrop-blur-xl border border-white/10 overflow-hidden transition-all duration-500 hover:border-[#148E96]/50 hover:shadow-[0_0_30px_-5px_rgba(20,142,150,0.3)]">
+
+                                    {/* 🖼️ 画像表示エリア */}
+                                    <div className="relative h-64 w-full overflow-hidden bg-gray-900">
+                                        {/* Next.js Image Component */}
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        />
+
+                                        {/* Overlay (画像を少し暗くして文字を見やすくする) */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-transparent opacity-80" />
+
+                                        {/* 右上のアイコン (アクセント) */}
+                                        <div className="absolute top-4 right-4 p-2 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 text-[#5eead4]">
+                                            <Icon className="w-5 h-5" />
                                         </div>
-                                        {/* Overlay gradient */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60" />
                                     </div>
 
                                     {/* Content */}
-                                    <div className="p-6 space-y-4">
+                                    <div className="flex flex-col flex-1 p-6 space-y-4">
                                         <div className="flex items-start justify-between">
-                                            <h3 className="text-xl font-semibold text-foreground group-hover:text-[#5eead4] transition-colors">
+                                            <h3 className="text-xl font-bold text-white group-hover:text-[#5eead4] transition-colors">
                                                 {project.title}
                                             </h3>
-                                            <motion.a
+                                            <a
                                                 href={project.link}
-                                                whileHover={{ scale: 1.1 }}
-                                                whileTap={{ scale: 0.95 }}
-                                                className="p-2 rounded-lg bg-[rgba(255,255,255,0.05)] text-muted-foreground hover:text-[#5eead4] hover:bg-[rgba(20,142,150,0.2)] transition-all"
-                                                aria-label={`View ${project.title} project`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="p-2 rounded-lg bg-white/5 text-gray-400 hover:text-[#5eead4] hover:bg-[#148E96]/20 transition-all"
+                                                aria-label={`Visit ${project.title}`}
                                             >
                                                 <ExternalLink className="w-4 h-4" />
-                                            </motion.a>
+                                            </a>
                                         </div>
 
-                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                        <p className="text-sm text-gray-400 leading-relaxed flex-1">
                                             {project.description}
                                         </p>
 
                                         {/* Tags */}
-                                        <div className="flex flex-wrap gap-2">
+                                        <div className="flex flex-wrap gap-2 pt-2">
                                             {project.tags.map((tag) => (
                                                 <span
                                                     key={tag}
-                                                    className="px-3 py-1 text-xs font-medium rounded-full bg-[rgba(20,142,150,0.15)] text-[#5eead4] border border-[rgba(20,142,150,0.3)]"
+                                                    className="px-3 py-1 text-xs font-medium rounded-full bg-[#148E96]/10 text-[#5eead4] border border-[#148E96]/20"
                                                 >
                                                     {tag}
                                                 </span>
                                             ))}
                                         </div>
-
-                                        {/* View Project Button */}
-                                        <motion.button
-                                            whileHover={{ x: 5 }}
-                                            className="flex items-center gap-2 text-sm font-medium text-[#148E96] hover:text-[#5eead4] transition-colors mt-4"
-                                        >
-                                            View Project
-                                            <ExternalLink className="w-4 h-4" />
-                                        </motion.button>
-                                    </div>
-
-                                    {/* Hover glow effect */}
-                                    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[rgba(20,142,150,0.1)] to-transparent" />
                                     </div>
                                 </div>
                             </motion.article>
@@ -175,7 +164,7 @@ export function WorksSection() {
                     transition={{ delay: 0.4 }}
                     className="mt-12 text-center"
                 >
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-gray-500 text-sm">
                         その他のプロジェクトは準備中...
                     </p>
                 </motion.div>

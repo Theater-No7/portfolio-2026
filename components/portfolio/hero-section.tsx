@@ -91,7 +91,7 @@ export function HeroSection() {
                             GitHub
                         </a>
                         <a
-                            href="https://note.com"
+                            href="https://note.com/theater_no7"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex items-center gap-3 px-6 py-3 rounded-xl border border-[rgba(255,255,255,0.2)] text-foreground font-medium transition-all duration-300 hover:border-[#148E96] hover:text-[#5eead4] hover:bg-[rgba(20,142,150,0.1)]"
