@@ -1,26 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Twitter, Linkedin, ArrowUpRight } from "lucide-react";
+import { Mail, Github, Twitter, Linkedin, ArrowUpRight, StickyNote } from "lucide-react";
 
 const socialLinks = [
     {
         icon: Github,
         label: "GitHub",
-        href: "https://github.com",
-        username: "@leosato",
+        href: "https://github.com/Theater-No7",
+        username: "@Theater-No7",
     },
     {
         icon: Twitter,
         label: "Twitter",
-        href: "https://twitter.com",
-        username: "@leosato",
+        href: "https://x.com/Theater_No7",
+        username: "@Theater_No7",
     },
     {
-        icon: Linkedin,
-        label: "LinkedIn",
-        href: "https://linkedin.com",
-        username: "Leo Sato",
+        icon: StickyNote,
+        label: "Note",
+        href: "https://note.com/theater_no7",
+        username: "@Theater_No7",
     },
 ];
 
@@ -71,13 +71,13 @@ export function ContactSection() {
                             {/* Email CTA */}
                             <div className="text-center">
                                 <motion.a
-                                    href="mailto:hello@leosato.dev"
+                                    href="mailto:theater.no7@gmail.com"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                     className="inline-flex items-center gap-4 px-8 py-4 rounded-2xl bg-[#148E96] text-foreground font-medium transition-all duration-300 hover:bg-[#5eead4] hover:text-[#0a0a0a] hover:shadow-lg hover:shadow-[rgba(20,142,150,0.4)]"
                                 >
                                     <Mail className="w-5 h-5" />
-                                    <span className="text-lg">hello@leosato.dev</span>
+                                    <span className="text-lg">theater.no7@gmail.com</span>
                                     <ArrowUpRight className="w-5 h-5" />
                                 </motion.a>
                             </div>
