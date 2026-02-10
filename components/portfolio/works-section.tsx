@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { ExternalLink, Sparkles, BookOpen } from "lucide-react";
+import { ExternalLink, Sparkles, BookOpen, Palette, Layers } from "lucide-react";
 import Image from "next/image"; // ← 追加
 
 const projects = [
@@ -24,6 +24,26 @@ const projects = [
         tags: ["TypeScript", "React", "Tailwind", "Firebase", "UX Research"],
         link: "https://kalua-app.vercel.app/",
         icon: BookOpen,
+    },
+    {
+        id: 3,
+        title: "Neon Icon Set",
+        description:
+            "サイバーパンクな世界観を意識したネオン風アプリアイコンセット。光の拡散や色彩設計にこだわり、視認性と没入感を両立させました。",
+        image: "/projects/neon-logo.png", // ※ publicフォルダにこの名前で画像を置いてください
+        tags: ["Graphic Design", "Illustrator", "Photoshop", "Neon Art"],
+        link: "https://www.pixiv.net/", // ← Pixivやインスタの投稿URLに書き換えてください
+        icon: Palette,
+    },
+    {
+        id: 4,
+        title: "Mobile Widgets",
+        description:
+            "ホーム画面を彩るウィジェットのUIデザイン。情報の優先順位を整理し、小さな領域でも直感的に情報が伝わるレイアウトを設計しました。",
+        image: "/projects/widget-ui.png", // ※ publicフォルダにこの名前で画像を置いてください
+        tags: ["UI Design", "Figma", "Mobile App", "Widget"],
+        link: "https://twitter.com/", // ← XやBehanceなどのURLに書き換えてください
+        icon: Layers,
     },
 ];
 
