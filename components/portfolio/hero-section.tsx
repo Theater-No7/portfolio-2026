@@ -82,7 +82,7 @@ export function HeroSection() {
                         className="flex flex-wrap gap-4"
                     >
                         <a
-                            href="https://github.com"
+                            href="https://github.com/Theater-No7"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex items-center gap-3 px-6 py-3 rounded-xl bg-[#148E96] text-[#ffffff] font-medium transition-all duration-300 hover:bg-[#5eead4] hover:text-[#0a0a0a] hover:shadow-lg hover:shadow-[rgba(20,142,150,0.4)]"

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Twitter, Linkedin, ArrowUpRight, StickyNote } from "lucide-react";
+import { Mail, Github, Twitter, ArrowUpRight, StickyNote, Palette, ShoppingBag } from "lucide-react";
 
 const socialLinks = [
     {
@@ -15,6 +15,18 @@ const socialLinks = [
         label: "Twitter",
         href: "https://x.com/Theater_No7",
         username: "@Theater_No7",
+    },
+    {
+        icon: Palette,
+        label: "Pixiv",
+        href: "https://www.pixiv.net/users/123734674",
+        username: "Theater No.7",
+    },
+    {
+        icon: ShoppingBag,
+        label: "BOOTH",
+        href: "https://theater-no7.booth.pm/",
+        username: "Theater No.7 Store",
     },
     {
         icon: StickyNote,
@@ -92,7 +104,8 @@ export function ContactSection() {
                             </div>
 
                             {/* Social Links */}
-                            <div className="grid sm:grid-cols-3 gap-4">
+                            {/* Gridレイアウトに変更: モバイルで2列、sm以上で3列になり「3・2」の配置を実現 */}
+                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 justify-items-center">
                                 {socialLinks.map((link, index) => {
                                     const Icon = link.icon;
                                     return (
@@ -106,16 +119,17 @@ export function ContactSection() {
                                             viewport={{ once: true }}
                                             transition={{ delay: 0.1 * index }}
                                             whileHover={{ y: -4 }}
-                                            className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] hover:border-[rgba(20,142,150,0.4)] hover:bg-[rgba(20,142,150,0.1)] transition-all duration-300"
+                                            // 固定幅(w-32 sm:w-40)を削除し、w-fullにしてグリッドセルいっぱいに広げる
+                                            className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] hover:border-[rgba(20,142,150,0.4)] hover:bg-[rgba(20,142,150,0.1)] transition-all duration-300 w-full"
                                         >
                                             <div className="w-12 h-12 rounded-xl bg-[rgba(20,142,150,0.2)] flex items-center justify-center group-hover:bg-[#148E96] transition-colors">
                                                 <Icon className="w-6 h-6 text-[#5eead4] group-hover:text-foreground transition-colors" />
                                             </div>
-                                            <div className="text-center">
+                                            <div className="text-center w-full">
                                                 <p className="font-medium text-foreground group-hover:text-[#5eead4] transition-colors">
                                                     {link.label}
                                                 </p>
-                                                <p className="text-sm text-muted-foreground">
+                                                <p className="text-xs text-muted-foreground truncate w-full px-1">
                                                     {link.username}
                                                 </p>
                                             </div>
