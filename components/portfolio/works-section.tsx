@@ -10,7 +10,7 @@ const projects = [
         title: "Crolla",
         description:
             "Webコンテンツを自動同期・管理するAIツール。複数のプラットフォーム間での情報更新をスマートに自動化します。",
-        image: "/projects/crolla.png", // ← public/projects/crolla.png が読み込まれます
+        image: "/projects/crolla.png",
         tags: ["TypeScript", "Next.js", "Firebase", "OpenAI", "HCI"],
         link: "https://crolla.web.app/",
         icon: Sparkles,
@@ -20,7 +20,7 @@ const projects = [
         title: "Kalua",
         description:
             "飲食店のマニュアル管理・教育コストを削減するSaaS。現場のオペレーションを考慮したUI設計で、トレーニング効率を向上させます。",
-        image: "/projects/kalua.png", // ← public/projects/kalua.png が読み込まれます
+        image: "/projects/kalua.png",
         tags: ["TypeScript", "React", "Tailwind", "Firebase", "UX Research"],
         link: "https://kalua-app.vercel.app/",
         icon: BookOpen,
@@ -29,20 +29,20 @@ const projects = [
         id: 3,
         title: "Neon Icon Set",
         description:
-            "サイバーパンクな世界観を意識したネオン風アプリアイコンセット。光の拡散や色彩設計にこだわり、視認性と没入感を両立させました。",
-        image: "/projects/neon-logo.png", // ※ publicフォルダにこの名前で画像を置いてください
-        tags: ["Graphic Design", "Illustrator", "Photoshop", "Neon Art"],
-        link: "https://www.pixiv.net/", // ← Pixivやインスタの投稿URLに書き換えてください
+            "ネオン風アプリアイコンセットをデザインしています。光の拡散や色彩設計にこだわり、視認性と没入感を両立させました。pixivにて素材配布中。",
+        image: "/projects/neon-logo.png",
+        tags: ["Graphic Design", "Illustrator", "Neon Art", "Mobile App"],
+        link: "https://www.pixiv.net/users/123734674",
         icon: Palette,
     },
     {
         id: 4,
         title: "Mobile Widgets",
         description:
-            "ホーム画面を彩るウィジェットのUIデザイン。情報の優先順位を整理し、小さな領域でも直感的に情報が伝わるレイアウトを設計しました。",
-        image: "/projects/widget-ui.png", // ※ publicフォルダにこの名前で画像を置いてください
-        tags: ["UI Design", "Figma", "Mobile App", "Widget"],
-        link: "https://twitter.com/", // ← XやBehanceなどのURLに書き換えてください
+            "サイバーパンクな世界観を意識したホーム画面を彩るウィジェットをデザインしています。BOOTHにてオリジナルグッズを販売中。",
+        image: "/projects/widget-ui.png",
+        tags: ["Graphic Design", "Illustrator", "Neon Art", "Widget"],
+        link: "https://theater-no7.booth.pm/",
         icon: Layers,
     },
 ];
