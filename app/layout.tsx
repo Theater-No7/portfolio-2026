@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     default: "Leo Sato | Design Engineer",
     template: "%s | Leo Sato"
   },
-  description: "HCI研究とエンジニアリングの架け橋となるポートフォリオサイト。",
+  description: "技術とビジネスの架け橋となるポートフォリオサイト。",
   openGraph: {
     title: "Leo Sato | Design Engineer",
-    description: "HCI研究とエンジニアリングの架け橋となるポートフォリオサイト。",
+    description: "技術とビジネスの架け橋となるポートフォリオサイト。",
     url: TEMP_DOMAIN,
     siteName: "Leo Sato Portfolio",
     locale: "ja_JP",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Leo Sato | Design Engineer",
-    description: "HCI研究とエンジニアリングの架け橋となるポートフォリオサイト。",
+    description: "技術とビジネスの架け橋となるポートフォリオサイト。",
     // images: ["/og-image.png"], // 自動で継承されますが一応
   },
   icons: {

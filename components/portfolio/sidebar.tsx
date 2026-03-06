@@ -121,7 +121,7 @@ export function Sidebar({ activeSection, onNavigate }: SidebarProps) {
                         </div>
                     </div>
                     <p className="text-xs text-gray-500 leading-relaxed">
-                        HCIとエンジニアリングの架け橋。
+                        技術とビジネスの架け橋。
                     </p>
                 </motion.div>
             </div>
