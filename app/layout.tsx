@@ -1,7 +1,9 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Noto_Sans_JP } from 'next/font/google' // ←Noto Sans JPを追加
+import { Geist, Geist_Mono, Noto_Sans_JP } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import CustomCursor from "@/components/portfolio/custom-cursor"
+import AmbientBackground from "@/components/portfolio/ambient-background"
 import './globals.css'
 
 const geist = Geist({
@@ -26,15 +28,14 @@ const notoSansJP = Noto_Sans_JP({
 const TEMP_DOMAIN = "https://theater-no7-portfolio-2026.vercel.app";
 
 export const metadata: Metadata = {
-
-  metadataBase: new URL(TEMP_DOMAIN), // ←これを設定するとOGP画像が正しく認識されます
+  metadataBase: new URL(TEMP_DOMAIN),
   title: {
-    default: "Leo Sato | Design Engineer",
+    default: "Leo Sato | UX Planner & Prototyper",
     template: "%s | Leo Sato"
   },
   description: "技術とビジネスの架け橋となるポートフォリオサイト。",
   openGraph: {
-    title: "Leo Sato | Design Engineer",
+    title: "Leo Sato | UX Planner & Prototyper",
     description: "技術とビジネスの架け橋となるポートフォリオサイト。",
     url: TEMP_DOMAIN,
     siteName: "Leo Sato Portfolio",
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png", // publicフォルダに画像を置く前提
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Leo Sato Portfolio Cover",
@@ -51,12 +52,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Leo Sato | Design Engineer",
+    title: "Leo Sato | UX Planner & Prototyper",
     description: "技術とビジネスの架け橋となるポートフォリオサイト。",
-    // images: ["/og-image.png"], // 自動で継承されますが一応
   },
   icons: {
-    icon: "/favicon.ico", // publicフォルダのアイコン
+    icon: "/favicon.ico",
   },
 };
 
@@ -67,7 +67,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className="scroll-smooth">
-      <body className={`${geist.variable} ${geistMono.variable} ${notoSansJP.variable} font-sans antialiased bg-[#0a0a0a] text-white selection:bg-[#148E96] selection:text-white`}>
+      <body className={`${geist.variable} ${geistMono.variable} ${notoSansJP.variable} font-sans antialiased bg-transparent text-white selection:bg-[#148E96] selection:text-white`}>
+        <AmbientBackground />
+        <CustomCursor />
         {children}
         <Analytics />
       </body>

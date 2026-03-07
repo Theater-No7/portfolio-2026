@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: #0a0a0a;
+    --background: transparent;
     --foreground: #ffffff;
     --card: rgba(20, 142, 150, 0.1);
     --card-foreground: #ffffff;
@@ -19,7 +19,6 @@
     --accent: #5eead4;
     --accent-foreground: #0a0a0a;
     --destructive: 0.577 0.245 27.325;
-    /* oklch関数は削除し数値のみにするか、一旦このままで */
     --destructive-foreground: 0.577 0.245 27.325;
     --border: rgba(255, 255, 255, 0.1);
     --input: rgba(255, 255, 255, 0.1);
@@ -35,8 +34,6 @@
     --sidebar-ring: #148E96;
     --teal: #148E96;
     --teal-glow: #5eead4;
-
-    /* チャート用カラー（使う場合） */
     --chart-1: #148E96;
     --chart-2: #5eead4;
     --chart-3: #2662d9;
@@ -51,6 +48,30 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-transparent text-foreground;
   }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(10vh) translateX(0px) scale(1);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.5;
+  }
+
+  80% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(-110vh) translateX(20px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float linear infinite;
 }
