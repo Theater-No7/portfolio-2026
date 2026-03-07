@@ -75,3 +75,19 @@
 .animate-float {
   animation: float linear infinite;
 }
+
+.animate-scroll-bubble {
+  animation: scrollBubbleFloat linear infinite;
+}
+
+@keyframes scrollBubbleFloat {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-60vh) translateX(40px) scale(1.5);
+    opacity: 0;
+  }
+}

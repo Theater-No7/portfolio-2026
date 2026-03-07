@@ -4,6 +4,7 @@ import { Geist, Geist_Mono, Noto_Sans_JP } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import CustomCursor from "@/components/portfolio/custom-cursor"
 import AmbientBackground from "@/components/portfolio/ambient-background"
+import ScrollBubbles from "@/components/portfolio/scroll-bubbles"
 import './globals.css'
 
 const geist = Geist({
@@ -69,6 +70,7 @@ export default function RootLayout({
     <html lang="ja" className="scroll-smooth">
       <body className={`${geist.variable} ${geistMono.variable} ${notoSansJP.variable} font-sans antialiased bg-transparent text-white selection:bg-[#148E96] selection:text-white`}>
         <AmbientBackground />
+        <ScrollBubbles />
         <CustomCursor />
         {children}
         <Analytics />
