@@ -52,16 +52,16 @@ export function HeroSection() {
                         </motion.div>
 
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
-                            <span className="text-balance">Designing Logic,</span>
+                            <span className="text-balance">Empowering Users</span>
                             <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#148E96] to-[#5eead4]">
-                                Coding Experience.
+                                with Tech & UX.
                             </span>
                         </h1>
 
                         <p className="text-xl text-muted-foreground max-w-md">
                             <span className="text-foreground font-medium">Leo Sato</span> —
-                            Design Engineer / HCI Researcher.
+                            Service Planner / UX Engineer.
                         </p>
                     </div>
 
@@ -71,7 +71,7 @@ export function HeroSection() {
                         transition={{ delay: 0.4 }}
                         className="text-muted-foreground leading-relaxed max-w-lg"
                     >
-                        HCI（人間中心設計）の視点と、モダンなエンジニアリング技術を架橋するデザインエンジニア。論理的な使いやすさと、心躍る体験を実装します。
+                        現場の課題をUXの視点から紐解き、モダンな技術で形にする。<br />HCI（人間中心設計）の研究知見とフルスタックの開発力を掛け合わせ、企画からプロトタイプ実装まで一気通貫で「摩擦」のないサービスを創り出します。
                     </motion.p>
 
                     {/* CTA Buttons */}
