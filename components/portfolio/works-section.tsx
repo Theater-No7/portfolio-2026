@@ -6,24 +6,26 @@ import Image from "next/image"; // ← 追加
 
 const projects = [
     {
-        id: 1,
-        title: "Crolla",
-        description:
-            "Webコンテンツを自動同期・管理するAIツール。複数のプラットフォーム間での情報更新をスマートに自動化します。",
-        image: "/projects/crolla.png",
-        tags: ["TypeScript", "Next.js", "Firebase", "OpenAI", "HCI"],
-        link: "https://crolla.web.app/",
-        icon: Sparkles,
-    },
-    {
         id: 2,
         title: "Kalua",
         description:
-            "飲食店のマニュアル管理・教育コストを削減するSaaS。現場のオペレーションを考慮したUI設計で、トレーニング効率を向上させます。",
+            "カフェでの勤務経験から見つけた現場課題（紙マニュアルの汚れ、トーク履歴の流れ、キッチンでの閲覧困難）を出発点に設計・実装した自主制作SaaS。",
         image: "/projects/kalua.png",
         tags: ["TypeScript", "React", "Tailwind", "Firebase", "UX Research"],
         link: "https://kalua-app.vercel.app/",
         icon: BookOpen,
+        badge: "自主制作（実体験ベース）",
+    },
+    {
+        id: 1,
+        title: "Crolla",
+        description:
+            "Webコンテンツを自動同期・管理するAIツール。複数のプラットフォーム間での情報更新をスマートに自動化します。架空プロダクトのコンセプト制作。",
+        image: "/projects/crolla.png",
+        tags: ["TypeScript", "Next.js", "Firebase", "OpenAI", "HCI"],
+        link: "https://crolla.web.app/",
+        icon: Sparkles,
+        badge: "自主制作（コンセプト）",
     },
     {
         id: 3,
@@ -34,6 +36,7 @@ const projects = [
         tags: ["Graphic Design", "Illustrator", "Neon Art", "Mobile App"],
         link: "https://www.pixiv.net/users/123734674",
         icon: Palette,
+        badge: "販売中",
     },
     {
         id: 4,
@@ -44,6 +47,7 @@ const projects = [
         tags: ["Graphic Design", "Illustrator", "Neon Art", "Widget"],
         link: "https://theater-no7.booth.pm/",
         icon: Layers,
+        badge: "販売中",
     },
     {
         id: 5,
@@ -172,6 +176,11 @@ export function WorksSection() {
 
                                         {/* Tags */}
                                         <div className="flex flex-wrap gap-2 pt-2">
+                                            {project.badge && (
+                                                <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#148E96] text-[#ffffff] border border-[#148E96]">
+                                                    {project.badge}
+                                                </span>
+                                            )}
                                             {project.tags.map((tag) => (
                                                 <span
                                                     key={tag}

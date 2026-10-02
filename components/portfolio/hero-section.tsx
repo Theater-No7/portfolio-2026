@@ -4,23 +4,22 @@ import { motion } from "framer-motion";
 import { Github, FileText, Play, Pause, SkipBack, SkipForward, Volume2 } from "lucide-react";
 import { useState } from "react";
 
-const codeSnippet = `// Design meets Engineering
-export function MusicPlayer() {
-  const [playing, setPlaying] = useState(false);
-  
-  return (
-    <motion.div 
-      className="glass-card"
-      whileHover={{ scale: 1.02 }}
-    >
-      <Album cover={track.art} />
-      <Controls 
-        onPlay={() => setPlaying(!playing)}
-        isPlaying={playing}
-      />
-    </motion.div>
-  );
-}`;
+const codeSnippet = `  useEffect(() => {
+    let hasMoved = false;
+
+    const onMouseMove = (e: MouseEvent) => {
+      if (!isVisible) setIsVisible(true);
+      mousePos.current = { x: e.clientX, y: e.clientY };
+
+      if (!hasMoved) {
+        currentPos.current = { x: e.clientX, y: e.clientY };
+        hasMoved = true;
+      }
+    };
+
+    const render = () => {
+      const speed = 0.12;
+      currentPos.current.x += (mousePos.current.x - currentPos.current.x) * speed;`;
 
 export function HeroSection() {
     const [isHovered, setIsHovered] = useState(false);
@@ -119,7 +118,7 @@ export function HeroSection() {
                                 <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
                                 <div className="w-3 h-3 rounded-full bg-[#27ca40]" />
                                 <span className="ml-2 text-xs text-muted-foreground">
-                                    MusicPlayer.tsx
+                                    custom-cursor.tsx
                                 </span>
                             </div>
                             <pre className="text-xs font-mono leading-relaxed overflow-hidden">
