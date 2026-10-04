@@ -84,7 +84,7 @@ export function AboutSection() {
                             </div>
                             <div>
                                 <h3 className="text-2xl font-bold text-foreground">Leo Sato</h3>
-                                <p className="text-[#5eead4]">Design Engineer / HCI Researcher</p>
+                                <p className="text-[#5eead4]">UX Planner / Prototyper</p>
                             </div>
                         </div>
 

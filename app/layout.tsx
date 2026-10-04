@@ -31,12 +31,12 @@ const TEMP_DOMAIN = "https://theater-no7-portfolio-2026.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(TEMP_DOMAIN),
   title: {
-    default: "Leo Sato | LP・小規模サイト制作 / UX Planner",
+    default: "Leo Sato | UX Planner / Prototyper",
     template: "%s | Leo Sato"
   },
   description: "現場の課題をヒアリングし、LPや小規模サイトをNext.jsで設計・実装します。HCI研究とフルスタック開発の両面から、使いやすい形に落とし込みます。",
   openGraph: {
-    title: "Leo Sato | LP・小規模サイト制作 / UX Planner",
+    title: "Leo Sato | UX Planner / Prototyper",
     description: "現場の課題をヒアリングし、LPや小規模サイトをNext.jsで設計・実装します。HCI研究とフルスタック開発の両面から、使いやすい形に落とし込みます。",
     url: TEMP_DOMAIN,
     siteName: "Leo Sato Portfolio",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Leo Sato | LP・小規模サイト制作 / UX Planner",
+    title: "Leo Sato | UX Planner / Prototyper",
     description: "現場の課題をヒアリングし、LPや小規模サイトをNext.jsで設計・実装します。HCI研究とフルスタック開発の両面から、使いやすい形に落とし込みます。",
   },
   icons: {

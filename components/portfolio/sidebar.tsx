@@ -42,7 +42,7 @@ export function Sidebar({ activeSection, onNavigate }: SidebarProps) {
                     </div>
                     <div>
                         <h1 className="font-bold text-white tracking-tight">Leo Sato</h1>
-                        <p className="text-xs text-gray-400">Design Engineer</p>
+                        <p className="text-xs text-gray-400">UX Planner / Prototyper</p>
                     </div>
                 </motion.div>
             </div>

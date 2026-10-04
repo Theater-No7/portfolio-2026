@@ -60,7 +60,7 @@ export function HeroSection() {
 
                         <p className="text-xl text-muted-foreground max-w-md">
                             <span className="text-foreground font-medium">Leo Sato</span> —
-                            Service Planner / UX Engineer.
+                            UX Planner / Prototyper.
                         </p>
                     </div>
 

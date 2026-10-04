@@ -79,7 +79,7 @@ export function MobileNav() {
                             7
                         </div>
                         <h2 className="text-xl font-bold text-white tracking-tight">Leo Sato</h2>
-                        <p className="text-xs text-gray-400 mt-1">Design Engineer</p>
+                        <p className="text-xs text-gray-400 mt-1">UX Planner / Prototyper</p>
                     </div>
 
                     {/* ナビゲーションリンク */}
