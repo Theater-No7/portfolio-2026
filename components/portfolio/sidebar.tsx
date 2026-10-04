@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { User, Briefcase, Mail, Info } from "lucide-react";
+import { User, Briefcase, Mail, Info, Sparkles } from "lucide-react";
 
 interface SidebarProps {
     activeSection: string;
@@ -11,6 +11,7 @@ interface SidebarProps {
 const navItems = [
     { id: "hero", label: "Profile", icon: User }, // idを"profile"から"hero"等のセクションIDに合わせるとベターです
     { id: "works", label: "Works", icon: Briefcase },
+    { id: "services", label: "Services", icon: Sparkles },
     { id: "about", label: "About", icon: Info },
     { id: "contact", label: "Contact", icon: Mail },
 ];

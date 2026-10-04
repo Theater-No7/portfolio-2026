@@ -2,36 +2,37 @@
 
 import { motion } from "framer-motion";
 import { Mail, Github, Twitter, ArrowUpRight, StickyNote, Palette, ShoppingBag } from "lucide-react";
+import { SITE } from "@/lib/site-config";
 
 const socialLinks = [
     {
         icon: Github,
         label: "GitHub",
-        href: "https://github.com/Theater-No7",
+        href: SITE.github,
         username: "@Theater-No7",
     },
     {
         icon: Twitter,
         label: "Twitter",
-        href: "https://x.com/Theater_No7",
+        href: SITE.x,
         username: "@Theater_No7",
     },
     {
         icon: Palette,
         label: "Pixiv",
-        href: "https://www.pixiv.net/users/123734674",
+        href: SITE.pixiv,
         username: "Theater No.7",
     },
     {
         icon: ShoppingBag,
         label: "BOOTH",
-        href: "https://theater-no7.booth.pm/",
+        href: SITE.booth,
         username: "Theater No.7 Store",
     },
     {
         icon: StickyNote,
         label: "Note",
-        href: "https://note.com/theater_no7",
+        href: SITE.note,
         username: "@Theater_No7",
     },
 ];
@@ -80,16 +81,27 @@ export function ContactSection() {
                         <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#5eead4]/10 rounded-full blur-3xl" />
 
                         <div className="relative z-10 space-y-8">
-                            {/* Email CTA */}
-                            <div className="text-center">
+                            {/* CTA Buttons */}
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                                 <motion.a
-                                    href="mailto:theater.no7@gmail.com"
+                                    href={`mailto:${SITE.email}`}
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="inline-flex items-center gap-4 px-8 py-4 rounded-2xl bg-[#148E96] text-foreground font-medium transition-all duration-300 hover:bg-[#5eead4] hover:text-[#0a0a0a] hover:shadow-lg hover:shadow-[rgba(20,142,150,0.4)]"
+                                    className="inline-flex items-center justify-center gap-4 px-8 py-4 rounded-2xl bg-[#148E96] text-foreground font-medium transition-all duration-300 hover:bg-[#5eead4] hover:text-[#0a0a0a] hover:shadow-lg hover:shadow-[rgba(20,142,150,0.4)] w-full sm:w-auto"
                                 >
                                     <Mail className="w-5 h-5" />
-                                    <span className="text-lg">theater.no7@gmail.com</span>
+                                    <span className="text-lg">{SITE.email}</span>
+                                    <ArrowUpRight className="w-5 h-5" />
+                                </motion.a>
+                                <motion.a
+                                    href={SITE.coconala}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="inline-flex items-center justify-center gap-4 px-8 py-4 rounded-2xl bg-transparent border border-[#148E96] text-[#5eead4] font-medium transition-all duration-300 hover:bg-[#148E96]/10 hover:shadow-lg w-full sm:w-auto"
+                                >
+                                    <span className="text-lg">ココナラで依頼する</span>
                                     <ArrowUpRight className="w-5 h-5" />
                                 </motion.a>
                             </div>

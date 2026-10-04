@@ -7,6 +7,7 @@ import { HeroSection } from "@/components/portfolio/hero-section";
 import { WorksSection } from "@/components/portfolio/works-section";
 import { AboutSection } from "@/components/portfolio/about-section";
 import { ContactSection } from "@/components/portfolio/contact-section";
+import { ServicesSection } from "@/components/portfolio/services-section";
 import { MobileNav } from "@/components/portfolio/mobile-nav";
 
 export default function Portfolio() {
@@ -14,7 +15,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "works", "about", "contact"];
+      const sections = ["hero", "services", "works", "about", "contact"];
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       for (const section of sections) {
@@ -73,6 +74,7 @@ export default function Portfolio() {
           transition={{ duration: 0.5 }}
         >
           <HeroSection />
+          <ServicesSection />
           <WorksSection />
           <AboutSection />
           <ContactSection />

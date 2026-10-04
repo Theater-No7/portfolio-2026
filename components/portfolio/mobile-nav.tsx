@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, User, Briefcase, Info, Mail } from "lucide-react"
+import { Menu, X, User, Briefcase, Info, Mail, Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 // ナビゲーション項目（Sidebarと同じもの）
 const navItems = [
     { name: "Profile", icon: User, href: "#hero" },
     { name: "Works", icon: Briefcase, href: "#works" },
+    { name: "Services", icon: Sparkles, href: "#services" },
     { name: "About", icon: Info, href: "#about" },
     { name: "Contact", icon: Mail, href: "#contact" },
 ]
