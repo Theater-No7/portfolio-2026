@@ -23,7 +23,7 @@ const projects = [
             "Webコンテンツを自動同期・管理するAIツール。複数のプラットフォーム間での情報更新をスマートに自動化します。架空プロダクトのコンセプト制作。",
         image: "/projects/crolla.png",
         tags: ["TypeScript", "Next.js", "Firebase", "OpenAI", "HCI"],
-        link: "https://crolla.web.app/",
+        link: "https://crolla-app.vercel.app/",
         icon: Sparkles,
         badge: "自主制作（コンセプト）",
     },
