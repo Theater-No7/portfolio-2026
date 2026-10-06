@@ -59,6 +59,12 @@ export function ServicesSection() {
                                     </li>
                                 ))}
                             </ul>
+                            
+                            {"note" in service && service.note && (
+                                <div className="mt-4 pt-4 border-t border-white/10 text-xs text-gray-400 whitespace-pre-wrap leading-relaxed">
+                                    {service.note}
+                                </div>
+                            )}
                         </motion.div>
                     ))}
                 </div>
